@@ -1,0 +1,11 @@
+##grflangid 0x01
+
+# GRF name and description
+STR_GRF_NAME                       :Korean Tram Set 0.0.1
+STR_GRF_DESC                       :This is South Korean Tram Set.
+
+# vehicle description
+STR_DESC_SEOUL_381                 :National Registered Cultural Heritage No. 467, Republic of Korea. Seoul Museum of History 
+
+# vehicle names
+STR_NAME_SEOUL_381                 :Seoul Tram No. 381
