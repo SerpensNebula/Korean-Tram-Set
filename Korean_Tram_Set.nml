@@ -3,7 +3,7 @@
         grfid                              :"KGT1"; 
         name                               :string(STR_GRF_NAME);
         desc                               :string(STR_GRF_DESC);
-        version                            :210615;
+        version                            :210619;
         min_compatible_version             :0;
     }
 
@@ -12,7 +12,12 @@
         PASS
     }
 
-
+// Sort
+    sort(FEAT_ROADVEHS, [
+        seoul_363,
+        seoul_381,
+        busan_old,
+        ]);    
 
 // Graphics
     template tmpl_tram (x, y) {
@@ -30,24 +35,79 @@
         [ x,      y,      60,      15,     -24,      -8]
     }  
 
-//Graphics Definition seoul_381
-    spriteset (seoul_381_car, "./Korean_Tram_Set/gfx/tram_old.png") {
+//Graphics Definition seoul_363
+    spriteset (seoul_363_car, "./Korean_Tram_Set/gfx/tram_old.png") {
         tmpl_tram (70, 0)
     } 
 
-    spriteset (seoul_381_purchase, "./Korean_Tram_Set/gfx/tram_old.png") {
+    spriteset (seoul_363_purchase, "./Korean_Tram_Set/gfx/tram_old.png") {
         tmpl_tram_purchase (0, 0)
+    }
+
+//Graphics Definition seoul_381
+    spriteset (seoul_381_car, "./Korean_Tram_Set/gfx/tram_old.png") {
+        tmpl_tram (70, 30)
+    } 
+
+    spriteset (seoul_381_purchase, "./Korean_Tram_Set/gfx/tram_old.png") {
+        tmpl_tram_purchase (0, 30)
     }
 
 //Graphics Definition busan_old
     spriteset (busan_old_car, "./Korean_Tram_Set/gfx/tram_old.png") {
-        tmpl_tram (70, 30)
+        tmpl_tram (70, 60)
     } 
 
     spriteset (busan_old_purchase, "./Korean_Tram_Set/gfx/tram_old.png") {
-        tmpl_tram_purchase (0, 30)
+        tmpl_tram_purchase (0, 60)
     }
 
+// Item seoul_363
+    item(FEAT_ROADVEHS, seoul_363) {
+
+        property {
+            // common properties 
+            name                           :string(STR_NAME_SEOUL_363);
+            climates_available             :ALL_CLIMATES;
+            introduction_date              :date(1930,01,01);
+            sprite_id                      :SPRITE_ID_NEW_ROADVEH; //use custom sprites
+
+            // Spec
+            power                          :144 hp; //uncertain
+            speed                          :56 km/h; //uncertain  
+            weight                         :18 ton;
+            length                         :8;
+
+            // model
+            model_life                     :VEHICLE_NEVER_EXPIRES;
+            vehicle_life                   :30;
+            retire_early                   :0;
+            reliability_decay              :0;
+
+            // cargo 
+            cargo_capacity                 :100;
+            refittable_cargo_classes       :NO_CARGO_CLASS;
+            non_refittable_cargo_classes   :NO_CARGO_CLASS;
+            cargo_allow_refit              :[PASS];
+            cargo_disallow_refit           :[];
+            loading_speed                  :25;
+
+            // Costs   
+            cost_factor                    :90;
+            running_cost_base              :RUNNING_COST_ROADVEH;
+            running_cost_factor            :90;
+            refit_cost                     :0;
+
+            // Flags
+            misc_flags                     :bitmask(ROADVEH_FLAG_TRAM); //make this a tram
+        }
+
+        graphics {
+            additional_text                :return string(STR_DESC_SEOUL_363);
+            default                        :seoul_363_car;
+            purchase                       :seoul_363_purchase;
+        }
+    }
 
 // Item seoul_381
     item(FEAT_ROADVEHS, seoul_381) {
@@ -60,8 +120,8 @@
             sprite_id                      :SPRITE_ID_NEW_ROADVEH; //use custom sprites
 
             // Spec
-            power                          :120 hp; //uncertain
-            speed                          :48 km/h; //uncertain  
+            power                          :144 hp; //uncertain
+            speed                          :56 km/h; //uncertain  
             weight                         :18 ton;
             length                         :8;
 
@@ -107,8 +167,8 @@
             sprite_id                      :SPRITE_ID_NEW_ROADVEH; //use custom sprites
 
             // Spec
-            power                          :120 hp; //uncertain
-            speed                          :48 km/h; //uncertain  
+            power                          :144 hp; //uncertain
+            speed                          :56 km/h; //uncertain  
             weight                         :18 ton;
             length                         :8;
 
@@ -142,4 +202,3 @@
             purchase                       :busan_old_purchase;
         }
     }
-
