@@ -3,7 +3,7 @@
         grfid                              :"KGT1"; 
         name                               :string(STR_GRF_NAME);
         desc                               :string(STR_GRF_DESC);
-        version                            :210619;
+        version                            :210824;
         min_compatible_version             :0;
     }
 
@@ -14,12 +14,65 @@
 
 // Sort
     sort(FEAT_ROADVEHS, [
+        seoul_y1899,
+        seoul_y1900,
+        seoul_51,
+        seoul_150,
+        busan_old,
         seoul_363,
         seoul_381,
-        busan_old,
         ]);    
 
 // Graphics
+
+    template tmpl_tram_purchase (x, y) {  
+        [ x,      y,      60,      15,     -24,      -8]
+    } 
+
+        template tmpl_tram_seoul_y1899 (x, y) {
+        [ x,      y,       8,      18,      -2,     -12]
+        [ x+20,   y,      16,      14,      -7,      -7]
+        [ x+55,   y,      22,      16,     -10,     -12]
+        [ x+100,  y,      16,      17,      -3,      -8]
+        [ x+130,  y,       8,      22,      -5,     -12] 
+        [ x+150,  y,      16,      17,     -13,      -9]
+        [ x+185,  y,      22,      16,     -13,     -11]
+        [ x+230,  y,      16,      14,      -5,      -8] 
+    }
+
+        template tmpl_tram_seoul_y1900 (x, y) {
+        [ x,      y,       8,      20,      -2,     -12]
+        [ x+20,   y,      18,      15,      -9,      -7]
+        [ x+55,   y,      27,      16,     -13,     -11]
+        [ x+100,  y,      18,      17,      -5,      -8]
+        [ x+130,  y,       8,      20,      -5,     -12] 
+        [ x+150,  y,      18,      17,     -15,      -8]
+        [ x+185,  y,      27,      16,     -13,     -10]
+        [ x+230,  y,      18,      15,      -5,      -8] 
+    }
+
+    template tmpl_tram_seoul_51 (x, y) {
+        [ x,      y,       8,      18,      -2,     -12]
+        [ x+20,   y,      16,      14,      -7,      -7]
+        [ x+55,   y,      22,      16,     -10,     -12]
+        [ x+100,  y,      16,      17,      -3,      -8]
+        [ x+130,  y,       8,      22,      -5,     -12]
+        [ x+150,  y,      16,      17,     -13,      -9]
+        [ x+185,  y,      22,      16,     -13,     -11]
+        [ x+230,  y,      16,      14,      -5,      -8]    
+    }
+
+    template tmpl_tram_seoul_150 (x, y) {
+        [ x,      y,       8,      20,      -2,     -12]
+        [ x+20,   y,      18,      15,      -9,      -7]
+        [ x+55,   y,      27,      16,     -10,     -12]
+        [ x+100,  y,      18,      19,      -5,     -10]
+        [ x+130,  y,       8,      25,      -5,     -12]
+        [ x+150,  y,      18,      19,     -13,     -11]
+        [ x+185,  y,      27,      16,     -13,     -11]
+        [ x+230,  y,      18,      15,      -5,      -8]    
+    }
+
     template tmpl_tram (x, y) {
         [ x,      y,       8,      22,      -2,     -13] 
         [ x+20,   y,      20,      17,      -9,      -9]
@@ -31,35 +84,345 @@
         [ x+230,  y,      20,      17,      -7,     -10]
     }    
 
-    template tmpl_tram_purchase (x, y) {  
-        [ x,      y,      60,      15,     -24,      -8]
+//Graphics Definition 
+    //seoul_y1899
+        spriteset (seoul_y1899_car_empty, "./Korean_Tram_Set/gfx/tram_modern.png") {
+            tmpl_tram_seoul_y1899 (70, 0)
+        }
+
+        spriteset (seoul_y1899_car_loading, "./Korean_Tram_Set/gfx/tram_modern.png") {
+            tmpl_tram_seoul_y1899 (70, 30)
+        }
+
+        spriteset (seoul_y1899_car_full, "./Korean_Tram_Set/gfx/tram_modern.png") {
+            tmpl_tram_seoul_y1899 (70, 60)
+        }
+
+        spriteset (seoul_y1899_car_purchase, "./Korean_Tram_Set/gfx/tram_modern.png") {
+            tmpl_tram_purchase (0, 0)
+        }
+
+    //seoul_y1900
+        spriteset (seoul_y1900_car_empty, "./Korean_Tram_Set/gfx/tram_modern.png") {
+            tmpl_tram_seoul_y1900 (70, 90)
+        }
+
+        spriteset (seoul_y1900_car_loading, "./Korean_Tram_Set/gfx/tram_modern.png") {
+            tmpl_tram_seoul_y1900 (70, 120)
+        }
+
+        spriteset (seoul_y1900_car_full, "./Korean_Tram_Set/gfx/tram_modern.png") {
+            tmpl_tram_seoul_y1900 (70, 150)
+        }
+
+        spriteset (seoul_y1900_car_purchase, "./Korean_Tram_Set/gfx/tram_modern.png") {
+            tmpl_tram_purchase (0, 90)
+        }
+
+    //seoul_51
+        spriteset (seoul_51_car, "./Korean_Tram_Set/gfx/tram_modern.png") {
+            tmpl_tram_seoul_51 (70, 180)
+        }
+
+        spriteset (seoul_51_purchase, "./Korean_Tram_Set/gfx/tram_modern.png") {
+            tmpl_tram_purchase (0, 180)
+        }
+
+    //seoul_150
+        spriteset (seoul_150_car, "./Korean_Tram_Set/gfx/tram_modern.png") {
+            tmpl_tram_seoul_150 (70, 210)
+        }
+
+        spriteset (seoul_150_purchase, "./Korean_Tram_Set/gfx/tram_modern.png") {
+            tmpl_tram_purchase (0, 210)
+        }
+
+    //seoul_363
+        spriteset (seoul_363_car, "./Korean_Tram_Set/gfx/tram_modern.png") {
+            tmpl_tram (70, 240)
+        } 
+
+        spriteset (seoul_363_purchase, "./Korean_Tram_Set/gfx/tram_modern.png") {
+            tmpl_tram_purchase (0, 240)
+        }
+
+    //seoul_381
+        spriteset (seoul_381_car, "./Korean_Tram_Set/gfx/tram_modern.png") {
+            tmpl_tram (70, 270)
+        } 
+
+        spriteset (seoul_381_purchase, "./Korean_Tram_Set/gfx/tram_modern.png") {
+            tmpl_tram_purchase (0, 270)
+        }
+
+    //busan_old
+        spriteset (busan_old_car, "./Korean_Tram_Set/gfx/tram_modern.png") {
+            tmpl_tram (70, 300)
+        } 
+
+        spriteset (busan_old_purchase, "./Korean_Tram_Set/gfx/tram_modern.png") {
+            tmpl_tram_purchase (0, 300)
+        }
+
+// Graphics Sprite Group
+    //seoul_y1900
+        spritegroup spritegroup_seoul_car_y1900 {
+            loading    :    [
+                            seoul_y1900_car_empty, 
+                            seoul_y1900_car_loading,
+                            seoul_y1900_car_full
+                        ];
+            loaded     :    [
+                            seoul_y1900_car_empty, 
+                            seoul_y1900_car_loading,
+                            seoul_y1900_car_full
+                        ];
+        }    
+
+    //seoul_y1899
+        spritegroup spritegroup_seoul_car_y1899 {
+            loading    :    [
+                            seoul_y1899_car_empty, 
+                            seoul_y1899_car_loading,
+                            seoul_y1899_car_full
+                        ];
+            loaded     :    [
+                            seoul_y1899_car_empty, 
+                            seoul_y1899_car_loading,
+                            seoul_y1899_car_full
+                        ];
+        }    
+
+// Item seoul_y1899
+    item(FEAT_ROADVEHS, seoul_y1899) {
+
+        property {
+            // common properties 
+            name                           :string(STR_NAME_SEOUL_Y1899);
+            climates_available             :ALL_CLIMATES;
+            introduction_date              :date(1899,05,04);
+            sprite_id                      :SPRITE_ID_NEW_ROADVEH; //use custom sprites
+
+            // Spec
+            power                          :96 hp; //uncertain
+            speed                          :12 km/h; //uncertain  
+            weight                         :12 ton; //uncertain
+            length                         :6;
+
+            // model
+            model_life                     :VEHICLE_NEVER_EXPIRES;
+            vehicle_life                   :30;
+            retire_early                   :0;
+            reliability_decay              :0;
+
+            // cargo 
+            cargo_capacity                 :40;
+            refittable_cargo_classes       :NO_CARGO_CLASS;
+            non_refittable_cargo_classes   :NO_CARGO_CLASS;
+            cargo_allow_refit              :[PASS];
+            cargo_disallow_refit           :[];
+            loading_speed                  :25;
+
+            // Costs   
+            cost_factor                    :25;
+            running_cost_base              :RUNNING_COST_ROADVEH;
+            running_cost_factor            :20;
+            refit_cost                     :0;
+
+            // Flags
+            misc_flags                     :bitmask(ROADVEH_FLAG_TRAM); //make this a tram
+        }
+
+        graphics {
+            additional_text                :return string(STR_DESC_SEOUL_Y1899);
+            default                        :spritegroup_seoul_car_y1899;
+            purchase                       :seoul_y1899_car_purchase;
+        }
     }  
 
-//Graphics Definition seoul_363
-    spriteset (seoul_363_car, "./Korean_Tram_Set/gfx/tram_old.png") {
-        tmpl_tram (70, 0)
-    } 
+// Item seoul_y1900
+    item(FEAT_ROADVEHS, seoul_y1900) {
 
-    spriteset (seoul_363_purchase, "./Korean_Tram_Set/gfx/tram_old.png") {
-        tmpl_tram_purchase (0, 0)
-    }
+        property {
+            // common properties 
+            name                           :string(STR_NAME_SEOUL_Y1900);
+            climates_available             :ALL_CLIMATES;
+            introduction_date              :date(1900,01,01);
+            sprite_id                      :SPRITE_ID_NEW_ROADVEH; //use custom sprites
 
-//Graphics Definition seoul_381
-    spriteset (seoul_381_car, "./Korean_Tram_Set/gfx/tram_old.png") {
-        tmpl_tram (70, 30)
-    } 
+            // Spec
+            power                          :96 hp; //uncertain
+            speed                          :12 km/h; //uncertain  
+            weight                         :12 ton; //uncertain
+            length                         :7;
 
-    spriteset (seoul_381_purchase, "./Korean_Tram_Set/gfx/tram_old.png") {
-        tmpl_tram_purchase (0, 30)
-    }
+            // model
+            model_life                     :VEHICLE_NEVER_EXPIRES;
+            vehicle_life                   :30;
+            retire_early                   :0;
+            reliability_decay              :0;
 
-//Graphics Definition busan_old
-    spriteset (busan_old_car, "./Korean_Tram_Set/gfx/tram_old.png") {
-        tmpl_tram (70, 60)
-    } 
+            // cargo 
+            cargo_capacity                 :40;
+            refittable_cargo_classes       :NO_CARGO_CLASS;
+            non_refittable_cargo_classes   :NO_CARGO_CLASS;
+            cargo_allow_refit              :[PASS];
+            cargo_disallow_refit           :[];
+            loading_speed                  :25;
 
-    spriteset (busan_old_purchase, "./Korean_Tram_Set/gfx/tram_old.png") {
-        tmpl_tram_purchase (0, 60)
+            // Costs   
+            cost_factor                    :25;
+            running_cost_base              :RUNNING_COST_ROADVEH;
+            running_cost_factor            :20;
+            refit_cost                     :0;
+
+            // Flags
+            misc_flags                     :bitmask(ROADVEH_FLAG_TRAM); //make this a tram
+        }
+
+        graphics {
+            default                        :spritegroup_seoul_car_y1900;
+            purchase                       :seoul_y1900_car_purchase;
+        }
+    }  
+
+// Item seoul_51
+    item(FEAT_ROADVEHS, seoul_51) {
+
+        property {
+            // common properties 
+            name                           :string(STR_NAME_SEOUL_51);
+            climates_available             :ALL_CLIMATES;
+            introduction_date              :date(1910,01,01);
+            sprite_id                      :SPRITE_ID_NEW_ROADVEH; //use custom sprites
+
+            // Spec
+            power                          :120 hp; //uncertain
+            speed                          :40 km/h; //uncertain  
+            weight                         :14 ton; //uncertain
+            length                         :6;
+
+            // model
+            model_life                     :VEHICLE_NEVER_EXPIRES;
+            vehicle_life                   :30;
+            retire_early                   :0;
+            reliability_decay              :0;
+
+            // cargo 
+            cargo_capacity                 :50;
+            refittable_cargo_classes       :NO_CARGO_CLASS;
+            non_refittable_cargo_classes   :NO_CARGO_CLASS;
+            cargo_allow_refit              :[PASS];
+            cargo_disallow_refit           :[];
+            loading_speed                  :25;
+
+            // Costs   
+            cost_factor                    :50;
+            running_cost_base              :RUNNING_COST_ROADVEH;
+            running_cost_factor            :40;
+            refit_cost                     :0;
+
+            // Flags
+            misc_flags                     :bitmask(ROADVEH_FLAG_TRAM); //make this a tram
+        }
+
+        graphics {
+            default                        :seoul_51_car;
+            purchase                       :seoul_51_purchase;
+        }
+    }    
+
+// Item seoul_150
+    item(FEAT_ROADVEHS, seoul_150) {
+
+        property {
+            // common properties 
+            name                           :string(STR_NAME_SEOUL_150);
+            climates_available             :ALL_CLIMATES;
+            introduction_date              :date(1922,01,01);
+            sprite_id                      :SPRITE_ID_NEW_ROADVEH; //use custom sprites
+
+            // Spec
+            power                          :136 hp; //uncertain
+            speed                          :48 km/h; //uncertain  
+            weight                         :16 ton; //uncertain
+            length                         :7;
+
+            // model
+            model_life                     :VEHICLE_NEVER_EXPIRES;
+            vehicle_life                   :30;
+            retire_early                   :0;
+            reliability_decay              :0;
+
+            // cargo 
+            cargo_capacity                 :75;
+            refittable_cargo_classes       :NO_CARGO_CLASS;
+            non_refittable_cargo_classes   :NO_CARGO_CLASS;
+            cargo_allow_refit              :[PASS];
+            cargo_disallow_refit           :[];
+            loading_speed                  :25;
+
+            // Costs   
+            cost_factor                    :60;
+            running_cost_base              :RUNNING_COST_ROADVEH;
+            running_cost_factor            :60;
+            refit_cost                     :0;
+
+            // Flags
+            misc_flags                     :bitmask(ROADVEH_FLAG_TRAM); //make this a tram
+        }
+
+        graphics {
+            default                        :seoul_150_car;
+            purchase                       :seoul_150_purchase;
+        }
+    }    
+
+// Item busan_old
+    item(FEAT_ROADVEHS, busan_old) {
+
+        property {
+            // common properties 
+            name                           :string(STR_NAME_BUSAN_OLD);
+            climates_available             :ALL_CLIMATES;
+            introduction_date              :date(1927,01,01);
+            sprite_id                      :SPRITE_ID_NEW_ROADVEH; //use custom sprites
+
+            // Spec
+            power                          :144 hp; //uncertain
+            speed                          :56 km/h; //uncertain  
+            weight                         :18 ton;
+            length                         :8;
+
+            // model
+            model_life                     :VEHICLE_NEVER_EXPIRES;
+            vehicle_life                   :30;
+            retire_early                   :0;
+            reliability_decay              :0;
+
+            // cargo 
+            cargo_capacity                 :100;
+            refittable_cargo_classes       :NO_CARGO_CLASS;
+            non_refittable_cargo_classes   :NO_CARGO_CLASS;
+            cargo_allow_refit              :[PASS];
+            cargo_disallow_refit           :[];
+            loading_speed                  :25;
+
+            // Costs   
+            cost_factor                    :90;
+            running_cost_base              :RUNNING_COST_ROADVEH;
+            running_cost_factor            :90;
+            refit_cost                     :0;
+
+            // Flags
+            misc_flags                     :bitmask(ROADVEH_FLAG_TRAM); //make this a tram
+        }
+
+        graphics {
+            additional_text                :return string(STR_DESC_BUSAN_OLD);
+            default                        :busan_old_car;
+            purchase                       :busan_old_purchase;
+        }
     }
 
 // Item seoul_363
@@ -153,52 +516,5 @@
             additional_text                :return string(STR_DESC_SEOUL_381);
             default                        :seoul_381_car;
             purchase                       :seoul_381_purchase;
-        }
-    }
-
-// Item busan_old
-    item(FEAT_ROADVEHS, busan_old) {
-
-        property {
-            // common properties 
-            name                           :string(STR_NAME_BUSAN_OLD);
-            climates_available             :ALL_CLIMATES;
-            introduction_date              :date(1927,01,01);
-            sprite_id                      :SPRITE_ID_NEW_ROADVEH; //use custom sprites
-
-            // Spec
-            power                          :144 hp; //uncertain
-            speed                          :56 km/h; //uncertain  
-            weight                         :18 ton;
-            length                         :8;
-
-            // model
-            model_life                     :VEHICLE_NEVER_EXPIRES;
-            vehicle_life                   :30;
-            retire_early                   :0;
-            reliability_decay              :0;
-
-            // cargo 
-            cargo_capacity                 :100;
-            refittable_cargo_classes       :NO_CARGO_CLASS;
-            non_refittable_cargo_classes   :NO_CARGO_CLASS;
-            cargo_allow_refit              :[PASS];
-            cargo_disallow_refit           :[];
-            loading_speed                  :25;
-
-            // Costs   
-            cost_factor                    :90;
-            running_cost_base              :RUNNING_COST_ROADVEH;
-            running_cost_factor            :90;
-            refit_cost                     :0;
-
-            // Flags
-            misc_flags                     :bitmask(ROADVEH_FLAG_TRAM); //make this a tram
-        }
-
-        graphics {
-            additional_text                :return string(STR_DESC_BUSAN_OLD);
-            default                        :busan_old_car;
-            purchase                       :busan_old_purchase;
         }
     }
