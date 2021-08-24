@@ -1,15 +1,20 @@
 ##grflangid 0x01
 
 # GRF name and description
-STR_GRF_NAME                       :Korean Tram Set 0.0.3
+STR_GRF_NAME                       :Korean Tram Set 0.1.0
 STR_GRF_DESC                       :This is South Korean Tram Set.
 
 # vehicle description
+STR_DESC_SEOUL_Y1899               :The first tram car of Korean Peninsula.
 STR_DESC_SEOUL_363                 :National Registered Cultural Heritage No. 426. National Children's Science Center, South Korea.
 STR_DESC_SEOUL_381                 :National Registered Cultural Heritage No. 467. Seoul Museum of History, South Korea.  
 STR_DESC_BUSAN_OLD                 :National Registered Cultural Heritage No. 494. Seokdang Museum of Dong-a University, South Korea.
 
 # vehicle names
+STR_NAME_SEOUL_Y1899               :Seoul Tram year 1899 Korean Empire Era
+STR_NAME_SEOUL_Y1900               :Seoul Tram year 1900 Korean Empire Era
+STR_NAME_SEOUL_51                  :Seoul Tram No. 51
+STR_NAME_SEOUL_150                 :Seoul Tram No. 150
 STR_NAME_SEOUL_363                 :Seoul Tram No. 363
 STR_NAME_SEOUL_381                 :Seoul Tram No. 381
 STR_NAME_BUSAN_OLD                 :Busan Tram
