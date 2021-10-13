@@ -1,8 +1,8 @@
 ##grflangid 0x3A
 
 # GRF name and description
-STR_GRF_NAME                       :한국 전차 세트 0.1.0
-STR_GRF_DESC                       :한국 전차 세트입니다.
+STR_GRF_NAME                       :한국 전차 세트 0.1.1
+STR_GRF_DESC                       :한국 전차 세트입니다. 
 
 # vehicle description
 STR_DESC_SEOUL_Y1899               :한반도 최초의 전차 차량.
@@ -15,6 +15,6 @@ STR_NAME_SEOUL_Y1899               :서울전차 대한제국기, 1899년
 STR_NAME_SEOUL_Y1900               :서울전차 대한제국기, 1900년
 STR_NAME_SEOUL_51                  :서울전차 51호
 STR_NAME_SEOUL_150                 :서울전차 150호
+STR_NAME_BUSAN_OLD                 :부산전차
 STR_NAME_SEOUL_363                 :서울전차 363호
 STR_NAME_SEOUL_381                 :서울전차 381호
-STR_NAME_BUSAN_OLD                 :부산전차
