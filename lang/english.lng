@@ -1,20 +1,24 @@
 ##grflangid 0x01
 
 # GRF name and description
-STR_GRF_NAME                       :Korean Tram Set 0.1.1
-STR_GRF_DESC                       :This is South Korean Tram Set.
-
-# vehicle description
-STR_DESC_SEOUL_Y1899               :The first tram car of Korean Peninsula.
-STR_DESC_SEOUL_363                 :National Registered Cultural Heritage No. 426. National Children's Science Center, South Korea.
-STR_DESC_SEOUL_381                 :National Registered Cultural Heritage No. 467. Seoul Museum of History, South Korea.  
-STR_DESC_BUSAN_OLD                 :National Registered Cultural Heritage No. 494. Seokdang Museum of Dong-a University, South Korea.
+STR_GRF_NAME                           :Korean Tram Set 0.2.0
+STR_GRF_DESC                           :Korean Tram Set adds trams that operated from the Korean Empire to before liberation from Japan and newly manufactured trams in South Korea since the 2000s.
 
 # vehicle names
-STR_NAME_SEOUL_Y1899               :Seoul Tram year 1899 Korean Empire Era
-STR_NAME_SEOUL_Y1900               :Seoul Tram year 1900 Korean Empire Era
-STR_NAME_SEOUL_51                  :Seoul Tram No. 51
-STR_NAME_SEOUL_150                 :Seoul Tram No. 150
-STR_NAME_BUSAN_OLD                 :Busan Tram
-STR_NAME_SEOUL_363                 :Seoul Tram No. 363
-STR_NAME_SEOUL_381                 :Seoul Tram No. 381
+STR_NAME_SEOUL_Y1899                   :Seoul Tram year 1899 Korean Empire Era
+STR_NAME_SEOUL_Y1900                   :Seoul Tram year 1900 Korean Empire Era
+STR_NAME_SEOUL_51                      :Seoul Tram No. 51
+STR_NAME_SEOUL_150                     :Seoul Tram No. 150
+STR_NAME_BUSAN_OLD                     :Busan Tram
+STR_NAME_SEOUL_363                     :Seoul Tram No. 363
+STR_NAME_SEOUL_381                     :Seoul Tram No. 381
+STR_NAME_HYUNDAI_WIRELESS_TRAM_3CARS   :Hyundai Wireless Low-Floor Tram (3 Cars, 1CC)
+STR_NAME_HYUNDAI_WIRELESS_TRAM_5CARS   :Hyundai Wireless Low-Floor Tram (5 Cars, 1CC)
+STR_NAME_HYUNDAI_WIRELESS_TRAM_7CARS   :Hyundai Wireless Low-Floor Tram (7 Cars, 1CC)
+
+# vehicle descriptions
+STR_DESC_SEOUL_Y1899                   :The first tram vehicle of Korean Peninsula.
+STR_DESC_SEOUL_363                     :National Registered Cultural Heritage No. 426. National Children's Science Center, South Korea.
+STR_DESC_SEOUL_381                     :National Registered Cultural Heritage No. 467. Seoul Museum of History, South Korea.  
+STR_DESC_BUSAN_OLD                     :National Registered Cultural Heritage No. 494. Seokdang Museum of Dong-a University, South Korea.
+STR_DESC_HYUNDAI_WIRELESS_TRAM         :The first tram vehicle designed and manufactured in South Korea.
