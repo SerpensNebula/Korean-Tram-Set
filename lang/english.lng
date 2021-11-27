@@ -1,7 +1,7 @@
 ##grflangid 0x01
 
 # GRF name and description
-STR_GRF_NAME                           :Korean Tram Set 0.2.0
+STR_GRF_NAME                           :Korean Tram Set 0.2.1
 STR_GRF_DESC                           :Korean Tram Set adds trams that operated from the Korean Empire to before liberation from Japan and newly manufactured trams in South Korea since the 2000s.
 
 # vehicle names
