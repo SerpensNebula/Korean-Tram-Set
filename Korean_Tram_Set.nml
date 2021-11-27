@@ -3,10 +3,10 @@
         grfid                              :"KGT1"; 
         name                               :string(STR_GRF_NAME);
         desc                               :string(STR_GRF_DESC);
-        version                            :211020;
+        version                            :211127;
         min_compatible_version             :0;
-    }
-
+        }
+        
 // tables 
     cargotable {
         PASS
