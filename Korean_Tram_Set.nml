@@ -3,13 +3,20 @@
         grfid                              :"KGT1"; 
         name                               :string(STR_GRF_NAME);
         desc                               :string(STR_GRF_DESC);
-        version                            :211127;
+        version                            :211225;
         min_compatible_version             :0;
         }
         
 // tables 
     cargotable {
         PASS
+    }
+    
+    railtypetable {
+        ELRL,
+        KTR_,
+        KTRC,
+        KTRG
     }
 
 // Sort
@@ -25,6 +32,462 @@
         Hyundai_wireless_tram_5cars,
         Hyundai_wireless_tram_7cars,
         ]);    
+
+// TRACK_ELEC
+    // GUI
+        spriteset(set_TRACK_ELEC_gui, "./Korean_Tram_Set/gfx/TRACK_ELEC.png") {
+            [   0,    0,   20,   13,    0,    0]  // first line
+            [  30,    0,   20,   13,    0,    0]
+            [  60,    0,   20,   20,    0,    0]
+            [  90,    0,   20,   20,    0,    0]
+            [ 120,    0,   20,   20,    0,    0]
+            [ 150,    0,   20,   20,    0,    0]
+            [   0,   30,   48,   36,    0,    0]  // second line, cursers
+            [  60,   30,   48,   36,    0,    0]
+            [ 120,   30,   32,   32,    0,    0]
+            [ 160,   30,   32,   32,    0,    0]
+            [ 200,   30,   32,   32,    0,    0]
+            [ 240,   30,   32,   32,    0,    0]
+        }
+
+    // Tracks overlay
+        spriteset(set_TRACK_ELEC_overlay, "./Korean_Tram_Set/gfx/TRACK_ELEC.png") {
+            [   0,  100,   64,   31,  -31,    0] 
+            [  70,  100,   64,   31,  -31,    0]
+            [ 140,  100,   64,   31,  -31,    0]  // crosses
+            [ 210,  100,   64,   31,  -31,    0]
+            [ 280,  100,   64,   31,  -31,    0]
+            [ 350,  100,   64,   31,  -31,    0]
+            [ 420,  100,   64,   31,  -31,    0]
+            [ 490,  100,   64,   31,  -31,    0]  // turns 
+            [ 560,  100,   64,   31,  -31,    0]
+            [ 630,  100,   64,   31,  -31,    0]
+            [ 700,  100,   64,   31,  -31,    0]
+            [   0,  140,   64,   39,  -31,   -8]  // second line, slopes
+            [  70,  140,   64,   23,  -31,    0]
+            [ 140,  140,   64,   23,  -31,    0]
+            [ 210,  140,   64,   39,  -31,   -8]
+            [ 280,  140,   64,   31,  -31,    0]  // ends
+            [ 350,  140,   64,   31,  -31,    0]
+            [ 420,  140,   64,   31,  -31,    0]
+            [ 490,  140,   64,   31,  -31,    0]
+        } 
+
+    // Tracks underlay
+        spriteset(set_TRACK_ELEC_underlay, "./Korean_Tram_Set/gfx/TRACK_ELEC.png") {
+            [   0,  200,   64,   31,  -31,    0] 
+            [  70,  200,   64,   31,  -31,    0]
+            [ 140,  200,   64,   31,  -31,    0]  // crosses
+            [ 210,  200,   64,   31,  -31,    0]
+            [ 280,  200,   64,   31,  -31,    0]
+            [ 350,  200,   64,   31,  -31,    0]
+            [ 420,  200,   64,   31,  -31,    0]
+            [ 490,  200,   64,   31,  -31,    0]  // turns 
+            [ 560,  200,   64,   31,  -31,    0]
+            [ 630,  200,   64,   31,  -31,    0]
+            [ 700,  200,   64,   31,  -31,    0]
+            [   0,  240,   64,   39,  -31,   -8]  // second line, slopes
+            [  70,  240,   64,   23,  -31,    0]
+            [ 140,  240,   64,   23,  -31,    0]
+            [ 210,  240,   64,   39,  -31,   -8]
+            [ 280,  240,   64,   31,  -31,    0]  // ends
+            [ 350,  240,   64,   31,  -31,    0]
+            [ 420,  240,   64,   31,  -31,    0]
+            [ 490,  240,   64,   31,  -31,    0]
+        } 
+
+    // Depot
+        spriteset(set_TRACK_ELEC_depot, "./Korean_Tram_Set/gfx/TRACK_ELEC.png") {
+            [   0,  300,   64,   31,  -31,    0]   // SE entry
+            [  70,  300,   60,   64,    1,  -49]   // SE
+            [ 140,  300,   64,   31,  -31,    0]   // SW entry
+            [ 210,  300,   60,   64,  -59,  -49]   // SW
+            [ 280,  300,   60,   64,  -59,  -49]   // NE
+            [ 350,  300,   60,   64,    1,  -49]   // NW
+        }
+
+    // Bridge surfaces
+        spriteset(set_TRACK_ELEC_bridge_surfaces, "./Korean_Tram_Set/gfx/TRACK_ELEC.png") {
+            [   0,  380,   64,   31,  -31,    0]   // ↗↙
+            [  70,  380,   64,   31,  -31,    0]   // ↖↘
+            [ 140,  380,   64,   39,  -31,   -8]   // ↗ slope up
+            [ 210,  380,   64,   23,  -31,    0]   // ↘ slope up 
+            [ 280,  380,   64,   23,  -31,    0]   // ↙ slope up
+            [ 350,  380,   64,   39,  -31,   -8]   // ↖ slope up
+        }
+
+    // Define TRACK_ELEC
+        item(FEAT_TRAMTYPES, tram_track_elec, 00) {
+            property {
+                label:                          "ELRL";
+                introduction_date:              date(0000,01,01);
+                name:                           string(STR_TRACK_ELEC_NAME);             
+                menu_text:                      string(STR_TRACK_ELEC_DROPDOWN_MENU);
+                toolbar_caption:                string(STR_TRACK_ELEC_TOOLBAR_CAPTION);
+                build_window_caption:           string(STR_TRACK_ELEC_BUILD_VEHICLE_CAPTION);
+                new_engine_text:                string(STR_TRACK_ELEC_NEW_ENGINE);
+                autoreplace_text:               string(STR_TRACK_ELEC_AUTOREPLACE);
+
+                speed_limit:                    0 km/h;
+                construction_cost:              16;
+                maintenance_cost:               24;
+                sort_order:                     00;
+
+                powered_tramtype_list:          ["ELRL","KTR_","KTRC","KTRG"];
+                alternative_tramtype_list:      ["ELRL","KTR_","KTRC","KTRG"];
+                tramtype_flags:                 bitmask(TRAMTYPE_FLAG_CATENARY);
+            }
+
+            graphics {
+                gui:                            set_TRACK_ELEC_gui;                 
+                track_overlay:                  set_TRACK_ELEC_overlay;
+                underlay:                       set_TRACK_ELEC_underlay;
+                depots:                         set_TRACK_ELEC_depot;
+                bridge_surfaces:                set_TRACK_ELEC_bridge_surfaces;
+            }
+
+    }
+
+// TRACK_WIRELESS
+    // GUI (same with TRACK_ELEC)
+        spriteset(set_TRACK_WIRELESS_gui, "./Korean_Tram_Set/gfx/TRACK_ELEC.png") {
+            [   0,    0,   20,   13,    0,    0]  // first line
+            [  30,    0,   20,   13,    0,    0]
+            [  60,    0,   20,   20,    0,    0]
+            [  90,    0,   20,   20,    0,    0]
+            [ 120,    0,   20,   20,    0,    0]
+            [ 150,    0,   20,   20,    0,    0]
+            [   0,   30,   48,   36,    0,    0]  // second line, cursers
+            [  60,   30,   48,   36,    0,    0]
+            [ 120,   30,   32,   32,    0,    0]
+            [ 160,   30,   32,   32,    0,    0]
+            [ 200,   30,   32,   32,    0,    0]
+            [ 240,   30,   32,   32,    0,    0]
+        }
+
+    // Tracks overlay (same with TRACK_ELEC)
+        spriteset(set_TRACK_WIRELESS_overlay, "./Korean_Tram_Set/gfx/TRACK_ELEC.png") {
+            [   0,  100,   64,   31,  -31,    0] 
+            [  70,  100,   64,   31,  -31,    0]
+            [ 140,  100,   64,   31,  -31,    0]  // crosses
+            [ 210,  100,   64,   31,  -31,    0]
+            [ 280,  100,   64,   31,  -31,    0]
+            [ 350,  100,   64,   31,  -31,    0]
+            [ 420,  100,   64,   31,  -31,    0]
+            [ 490,  100,   64,   31,  -31,    0]  // turns 
+            [ 560,  100,   64,   31,  -31,    0]
+            [ 630,  100,   64,   31,  -31,    0]
+            [ 700,  100,   64,   31,  -31,    0]
+            [   0,  140,   64,   39,  -31,   -8]  // second line, slopes
+            [  70,  140,   64,   23,  -31,    0]
+            [ 140,  140,   64,   23,  -31,    0]
+            [ 210,  140,   64,   39,  -31,   -8]
+            [ 280,  140,   64,   31,  -31,    0]  // ends
+            [ 350,  140,   64,   31,  -31,    0]
+            [ 420,  140,   64,   31,  -31,    0]
+            [ 490,  140,   64,   31,  -31,    0]
+        } 
+
+    // Tracks underlay (same with TRACK_ELEC)
+        spriteset(set_TRACK_WIRELESS_underlay, "./Korean_Tram_Set/gfx/TRACK_ELEC.png") {
+            [   0,  200,   64,   31,  -31,    0] 
+            [  70,  200,   64,   31,  -31,    0]
+            [ 140,  200,   64,   31,  -31,    0]  // crosses
+            [ 210,  200,   64,   31,  -31,    0]
+            [ 280,  200,   64,   31,  -31,    0]
+            [ 350,  200,   64,   31,  -31,    0]
+            [ 420,  200,   64,   31,  -31,    0]
+            [ 490,  200,   64,   31,  -31,    0]  // turns 
+            [ 560,  200,   64,   31,  -31,    0]
+            [ 630,  200,   64,   31,  -31,    0]
+            [ 700,  200,   64,   31,  -31,    0]
+            [   0,  240,   64,   39,  -31,   -8]  // second line, slopes
+            [  70,  240,   64,   23,  -31,    0]
+            [ 140,  240,   64,   23,  -31,    0]
+            [ 210,  240,   64,   39,  -31,   -8]
+            [ 280,  240,   64,   31,  -31,    0]  // ends
+            [ 350,  240,   64,   31,  -31,    0]
+            [ 420,  240,   64,   31,  -31,    0]
+            [ 490,  240,   64,   31,  -31,    0]
+        } 
+
+    // Depot (same with TRACK_ELEC)
+        spriteset(set_TRACK_WIRELESS_depot, "./Korean_Tram_Set/gfx/TRACK_ELEC.png") {
+            [   0,  300,   64,   31,  -31,    0]   // SE entry
+            [  70,  300,   60,   64,    1,  -49]   // SE
+            [ 140,  300,   64,   31,  -31,    0]   // SW entry
+            [ 210,  300,   60,   64,  -59,  -49]   // SW
+            [ 280,  300,   60,   64,  -59,  -49]   // NE
+            [ 350,  300,   60,   64,    1,  -49]   // NW
+        }
+
+    // Bridge surfaces (same with TRACK_ELEC)
+        spriteset(set_TRACK_WIRELESS_bridge_surfaces, "./Korean_Tram_Set/gfx/TRACK_ELEC.png") {
+            [   0,  380,   64,   31,  -31,    0]   // ↗↙
+            [  70,  380,   64,   31,  -31,    0]   // ↖↘
+            [ 140,  380,   64,   39,  -31,   -8]   // ↗ slope up
+            [ 210,  380,   64,   23,  -31,    0]   // ↘ slope up 
+            [ 280,  380,   64,   23,  -31,    0]   // ↙ slope up
+            [ 350,  380,   64,   39,  -31,   -8]   // ↖ slope up
+        }
+
+    // Define TRACK_WIRELESS
+        item(FEAT_TRAMTYPES, tram_track_wireless, 01) {
+            property {
+                label:                          "KTR_";
+                introduction_date:              date(2000,01,01);
+                name:                           string(STR_TRACK_WIRELESS_NAME);             
+                menu_text:                      string(STR_TRACK_WIRELESS_DROPDOWN_MENU);
+                toolbar_caption:                string(STR_TRACK_WIRELESS_TOOLBAR_CAPTION);
+                build_window_caption:           string(STR_TRACK_WIRELESS_BUILD_VEHICLE_CAPTION);
+                new_engine_text:                string(STR_TRACK_WIRELESS_NEW_ENGINE);
+                autoreplace_text:               string(STR_TRACK_WIRELESS_AUTOREPLACE);
+
+                speed_limit:                    0 km/h;
+                construction_cost:              12;
+                maintenance_cost:               20;
+                sort_order:                     01;
+
+                powered_tramtype_list:          ["ELRL","KTR_","KTRC","KTRG"];
+                alternative_tramtype_list:      ["ELRL","KTR_","KTRC","KTRG"];
+            }
+
+            graphics {
+                gui:                            set_TRACK_WIRELESS_gui;                 
+                track_overlay:                  set_TRACK_WIRELESS_overlay;
+                underlay:                       set_TRACK_WIRELESS_underlay;
+                depots:                         set_TRACK_WIRELESS_depot;
+                bridge_surfaces:                set_TRACK_WIRELESS_bridge_surfaces;
+            }
+
+    }
+
+// TRACK_CONCRETE
+    // GUI
+        spriteset(set_TRACK_CONCRETE_gui, "./Korean_Tram_Set/gfx/TRACK_CONCRETE.png") {
+            [   0,    0,   20,   13,    0,    0]  // first line
+            [  30,    0,   20,   13,    0,    0]
+            [  60,    0,   20,   20,    0,    0]
+            [  90,    0,   20,   20,    0,    0]
+            [ 120,    0,   20,   20,    0,    0]
+            [ 150,    0,   20,   20,    0,    0]
+            [   0,   30,   48,   36,    0,    0]  // second line, cursers
+            [  60,   30,   48,   36,    0,    0]
+            [ 120,   30,   32,   32,    0,    0]
+            [ 160,   30,   32,   32,    0,    0]
+            [ 200,   30,   32,   32,    0,    0]
+            [ 240,   30,   32,   32,    0,    0]
+        }
+
+    // Tracks overlay
+        spriteset(set_TRACK_CONCRETE_overlay, "./Korean_Tram_Set/gfx/TRACK_CONCRETE.png") {
+            [   0,  100,   64,   31,  -31,    0] 
+            [  70,  100,   64,   31,  -31,    0]
+            [ 140,  100,   64,   31,  -31,    0]  // crosses
+            [ 210,  100,   64,   31,  -31,    0]
+            [ 280,  100,   64,   31,  -31,    0]
+            [ 350,  100,   64,   31,  -31,    0]
+            [ 420,  100,   64,   31,  -31,    0]
+            [ 490,  100,   64,   31,  -31,    0]  // turns 
+            [ 560,  100,   64,   31,  -31,    0]
+            [ 630,  100,   64,   31,  -31,    0]
+            [ 700,  100,   64,   31,  -31,    0]
+            [   0,  140,   64,   39,  -31,   -8]  // second line, slopes
+            [  70,  140,   64,   23,  -31,    0]
+            [ 140,  140,   64,   23,  -31,    0]
+            [ 210,  140,   64,   39,  -31,   -8]
+            [ 280,  140,   64,   31,  -31,    0]  // ends
+            [ 350,  140,   64,   31,  -31,    0]
+            [ 420,  140,   64,   31,  -31,    0]
+            [ 490,  140,   64,   31,  -31,    0]
+        } 
+
+    // Tracks underlay
+        spriteset(set_TRACK_CONCRETE_underlay, "./Korean_Tram_Set/gfx/TRACK_CONCRETE.png") {
+            [   0,  200,   64,   31,  -31,    0] 
+            [  70,  200,   64,   31,  -31,    0]
+            [ 140,  200,   64,   31,  -31,    0]  // crosses
+            [ 210,  200,   64,   31,  -31,    0]
+            [ 280,  200,   64,   31,  -31,    0]
+            [ 350,  200,   64,   31,  -31,    0]
+            [ 420,  200,   64,   31,  -31,    0]
+            [ 490,  200,   64,   31,  -31,    0]  // turns 
+            [ 560,  200,   64,   31,  -31,    0]
+            [ 630,  200,   64,   31,  -31,    0]
+            [ 700,  200,   64,   31,  -31,    0]
+            [   0,  240,   64,   39,  -31,   -8]  // second line, slopes
+            [  70,  240,   64,   23,  -31,    0]
+            [ 140,  240,   64,   23,  -31,    0]
+            [ 210,  240,   64,   39,  -31,   -8]
+            [ 280,  240,   64,   31,  -31,    0]  // ends
+            [ 350,  240,   64,   31,  -31,    0]
+            [ 420,  240,   64,   31,  -31,    0]
+            [ 490,  240,   64,   31,  -31,    0]
+        } 
+
+    // Depot
+        spriteset(set_TRACK_CONCRETE_depot, "./Korean_Tram_Set/gfx/TRACK_CONCRETE.png") {
+            [   0,  300,   64,   31,  -31,    0]   // SE entry
+            [  70,  300,   60,   64,    1,  -49]   // SE
+            [ 140,  300,   64,   31,  -31,    0]   // SW entry
+            [ 210,  300,   60,   64,  -59,  -49]   // SW
+            [ 280,  300,   60,   64,  -59,  -49]   // NE
+            [ 350,  300,   60,   64,    1,  -49]   // NW
+        }
+
+    // Bridge surfaces
+        spriteset(set_TRACK_CONCRETE_bridge_surfaces, "./Korean_Tram_Set/gfx/TRACK_CONCRETE.png") {
+            [   0,  380,   64,   31,  -31,    0]   // ↗↙
+            [  70,  380,   64,   31,  -31,    0]   // ↖↘
+            [ 140,  380,   64,   39,  -31,   -8]   // ↗ slope up
+            [ 210,  380,   64,   23,  -31,    0]   // ↘ slope up 
+            [ 280,  380,   64,   23,  -31,    0]   // ↙ slope up
+            [ 350,  380,   64,   39,  -31,   -8]   // ↖ slope up
+        }
+
+    // Define TRACK_CONCRETE
+        item(FEAT_TRAMTYPES, tram_track_concrete, 02) {
+            property {
+                label:                          "KTRC";
+                introduction_date:              date(2000,01,01);
+                name:                           string(STR_TRACK_CONCRETE_NAME);             
+                menu_text:                      string(STR_TRACK_CONCRETE_DROPDOWN_MENU);
+                toolbar_caption:                string(STR_TRACK_CONCRETE_TOOLBAR_CAPTION);
+                build_window_caption:           string(STR_TRACK_CONCRETE_BUILD_VEHICLE_CAPTION);
+                new_engine_text:                string(STR_TRACK_CONCRETE_NEW_ENGINE);
+                autoreplace_text:               string(STR_TRACK_CONCRETE_AUTOREPLACE);
+
+                speed_limit:                    0 km/h;
+                construction_cost:              12;
+                maintenance_cost:               20;
+                sort_order:                     02;
+
+                powered_tramtype_list:          ["ELRL","KTR_","KTRC","KTRG"];
+                alternative_tramtype_list:      ["ELRL","KTR_","KTRC","KTRG"];
+            }
+
+            graphics {
+                gui:                            set_TRACK_CONCRETE_gui;                 
+                track_overlay:                  set_TRACK_CONCRETE_overlay;
+                underlay:                       set_TRACK_CONCRETE_underlay;
+                depots:                         set_TRACK_CONCRETE_depot;
+                bridge_surfaces:                set_TRACK_CONCRETE_bridge_surfaces;
+            }
+
+    }
+
+// TRACK_GRASS
+    // GUI
+        spriteset(set_TRACK_GRASS_gui, "./Korean_Tram_Set/gfx/TRACK_GRASS.png") {
+            [   0,    0,   20,   13,    0,    0]  // first line
+            [  30,    0,   20,   13,    0,    0]
+            [  60,    0,   20,   20,    0,    0]
+            [  90,    0,   20,   20,    0,    0]
+            [ 120,    0,   20,   20,    0,    0]
+            [ 150,    0,   20,   20,    0,    0]
+            [   0,   30,   48,   36,    0,    0]  // second line, cursers
+            [  60,   30,   48,   36,    0,    0]
+            [ 120,   30,   32,   32,    0,    0]
+            [ 160,   30,   32,   32,    0,    0]
+            [ 200,   30,   32,   32,    0,    0]
+            [ 240,   30,   32,   32,    0,    0]
+        }
+
+    // Tracks overlay
+        spriteset(set_TRACK_GRASS_overlay, "./Korean_Tram_Set/gfx/TRACK_GRASS.png") {
+            [   0,  100,   64,   31,  -31,    0] 
+            [  70,  100,   64,   31,  -31,    0]
+            [ 140,  100,   64,   31,  -31,    0]  // crosses
+            [ 210,  100,   64,   31,  -31,    0]
+            [ 280,  100,   64,   31,  -31,    0]
+            [ 350,  100,   64,   31,  -31,    0]
+            [ 420,  100,   64,   31,  -31,    0]
+            [ 490,  100,   64,   31,  -31,    0]  // turns 
+            [ 560,  100,   64,   31,  -31,    0]
+            [ 630,  100,   64,   31,  -31,    0]
+            [ 700,  100,   64,   31,  -31,    0]
+            [   0,  140,   64,   39,  -31,   -8]  // second line, slopes
+            [  70,  140,   64,   23,  -31,    0]
+            [ 140,  140,   64,   23,  -31,    0]
+            [ 210,  140,   64,   39,  -31,   -8]
+            [ 280,  140,   64,   31,  -31,    0]  // ends
+            [ 350,  140,   64,   31,  -31,    0]
+            [ 420,  140,   64,   31,  -31,    0]
+            [ 490,  140,   64,   31,  -31,    0]
+        } 
+
+    // Tracks underlay
+        spriteset(set_TRACK_GRASS_underlay, "./Korean_Tram_Set/gfx/TRACK_GRASS.png") {
+            [   0,  200,   64,   31,  -31,    0] 
+            [  70,  200,   64,   31,  -31,    0]
+            [ 140,  200,   64,   31,  -31,    0]  // crosses
+            [ 210,  200,   64,   31,  -31,    0]
+            [ 280,  200,   64,   31,  -31,    0]
+            [ 350,  200,   64,   31,  -31,    0]
+            [ 420,  200,   64,   31,  -31,    0]
+            [ 490,  200,   64,   31,  -31,    0]  // turns 
+            [ 560,  200,   64,   31,  -31,    0]
+            [ 630,  200,   64,   31,  -31,    0]
+            [ 700,  200,   64,   31,  -31,    0]
+            [   0,  240,   64,   39,  -31,   -8]  // second line, slopes
+            [  70,  240,   64,   23,  -31,    0]
+            [ 140,  240,   64,   23,  -31,    0]
+            [ 210,  240,   64,   39,  -31,   -8]
+            [ 280,  240,   64,   31,  -31,    0]  // ends
+            [ 350,  240,   64,   31,  -31,    0]
+            [ 420,  240,   64,   31,  -31,    0]
+            [ 490,  240,   64,   31,  -31,    0]
+        } 
+
+    // Depot
+        spriteset(set_TRACK_GRASS_depot, "./Korean_Tram_Set/gfx/TRACK_GRASS.png") {
+            [   0,  300,   64,   31,  -31,    0]   // SE entry
+            [  70,  300,   60,   64,    1,  -49]   // SE
+            [ 140,  300,   64,   31,  -31,    0]   // SW entry
+            [ 210,  300,   60,   64,  -59,  -49]   // SW
+            [ 280,  300,   60,   64,  -59,  -49]   // NE
+            [ 350,  300,   60,   64,    1,  -49]   // NW
+        }
+
+    // Bridge surfaces
+        spriteset(set_TRACK_GRASS_bridge_surfaces, "./Korean_Tram_Set/gfx/TRACK_GRASS.png") {
+            [   0,  380,   64,   31,  -31,    0]   // ↗↙
+            [  70,  380,   64,   31,  -31,    0]   // ↖↘
+            [ 140,  380,   64,   39,  -31,   -8]   // ↗ slope up
+            [ 210,  380,   64,   23,  -31,    0]   // ↘ slope up 
+            [ 280,  380,   64,   23,  -31,    0]   // ↙ slope up
+            [ 350,  380,   64,   39,  -31,   -8]   // ↖ slope up
+        }
+
+    // Define TRACK_GRASS
+        item(FEAT_TRAMTYPES, tram_track_grass, 03) {
+            property {
+                label:                          "KTRG";
+                introduction_date:              date(2000,01,01);
+                name:                           string(STR_TRACK_GRASS_NAME);             
+                menu_text:                      string(STR_TRACK_GRASS_DROPDOWN_MENU);
+                toolbar_caption:                string(STR_TRACK_GRASS_TOOLBAR_CAPTION);
+                build_window_caption:           string(STR_TRACK_GRASS_BUILD_VEHICLE_CAPTION);
+                new_engine_text:                string(STR_TRACK_GRASS_NEW_ENGINE);
+                autoreplace_text:               string(STR_TRACK_GRASS_AUTOREPLACE);
+
+                speed_limit:                    0 km/h;
+                construction_cost:              12;
+                maintenance_cost:               20;
+                sort_order:                     03;
+
+                powered_tramtype_list:          ["ELRL","KTR_","KTRC","KTRG"];
+                alternative_tramtype_list:      ["ELRL","KTR_","KTRC","KTRG"];
+            }
+
+            graphics {
+                gui:                            set_TRACK_GRASS_gui;                 
+                track_overlay:                  set_TRACK_GRASS_overlay;
+                underlay:                       set_TRACK_GRASS_underlay;
+                depots:                         set_TRACK_GRASS_depot;
+                bridge_surfaces:                set_TRACK_GRASS_bridge_surfaces;
+            }
+    }
 
 // Graphics
 
@@ -94,33 +557,33 @@
     
     //hyundai_wireless_tram
         template tmpl_hyundai_wireless_tram_50 (x, y) {
-            [ x,      y,       8,      16,      -2,     -10] //↑
+            [ x,      y,       8,      17,      -2,     -10] //↑
             [ x+20,   y,      16,      15,      -8,      -7] //↗
             [ x+55,   y,      20,      12,      -7,      -7] //→
             [ x+100,  y,      16,      15,      -2,      -5] //↘
-            [ x+130,  y,       8,      16,      -4,      -7] //↓
+            [ x+130,  y,       8,      17,      -4,      -7] //↓
             [ x+150,  y,      16,      15,     -14,      -6] //↙
             [ x+185,  y,      20,      12,     -13,      -7] //←
             [ x+230,  y,      16,      15,      -8,     -10] //↖
         }   
 
         template tmpl_hyundai_wireless_tram_60 (x, y) {
-            [ x,      y,       8,      16,      -2,     -10] 
+            [ x,      y,       8,      17,      -2,     -10] 
             [ x+20,   y,      16,      15,      -8,      -7]
             [ x+55,   y,      20,      12,      -7,      -7]
             [ x+100,  y,      16,      15,      -2,      -5]
-            [ x+130,  y,       8,      16,      -4,      -7]
+            [ x+130,  y,       8,      17,      -4,      -7]
             [ x+150,  y,      16,      15,     -14,      -6]
             [ x+185,  y,      20,      12,     -13,      -7]
             [ x+230,  y,      16,      15,      -8,     -10]
         } 
 
         template tmpl_hyundai_wireless_tram_10 (x, y) {
-            [ x,      y,       8,      14,      -2,     -10] 
+            [ x,      y,       8,      15,      -2,     -10] 
             [ x+20,   y,      14,      14,      -6,      -7]
             [ x+55,   y,      16,      12,      -3,      -7]
             [ x+100,  y,      14,      14,       0,      -4]
-            [ x+130,  y,       8,      14,      -4,      -5]
+            [ x+130,  y,       8,      15,      -4,      -5]
             [ x+150,  y,      14,      14,     -14,      -5]
             [ x+185,  y,      16,      12,     -13,      -7]
             [ x+230,  y,      14,      14,      -8,     -10]
@@ -755,7 +1218,7 @@
             non_refittable_cargo_classes   :NO_CARGO_CLASS;
             cargo_allow_refit              :[PASS];
             cargo_disallow_refit           :[];
-            loading_speed                  :40;
+            loading_speed                  :50;
 
             // Costs   
             cost_factor                    :200;
@@ -805,7 +1268,7 @@
             non_refittable_cargo_classes   :NO_CARGO_CLASS;
             cargo_allow_refit              :[PASS];
             cargo_disallow_refit           :[];
-            loading_speed                  :40;
+            loading_speed                  :60;
 
             // Costs   
             cost_factor                    :255;
