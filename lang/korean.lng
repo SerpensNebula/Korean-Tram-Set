@@ -1,7 +1,7 @@
 ##grflangid 0x3A
 
 # GRF name and description
-STR_GRF_NAME                                     :한국 노면전차 세트 0.3.0
+STR_GRF_NAME                                     :한국 노면전차 세트 0.4.0
 STR_GRF_DESC                                     :대한 제국기부터 해방 이전까지 운행했던 노면전차와, 2000년대 이후 한국에서 새로 제작된 노면전차를 추가해주는 NewGRF입니다.
 
 
@@ -37,14 +37,15 @@ STR_TRACK_GRASS_AUTOREPLACE                      :무가선 노면전차 차량
 # vehicle names
 STR_NAME_SEOUL_Y1899                             :서울전차 대한제국기, 1899년
 STR_NAME_SEOUL_Y1900                             :서울전차 대한제국기, 1900년
-STR_NAME_SEOUL_51                                :서울전차 51호
-STR_NAME_SEOUL_150                               :서울전차 150호
-STR_NAME_BUSAN_OLD                               :부산전차
-STR_NAME_SEOUL_363                               :서울전차 363호
-STR_NAME_SEOUL_381                               :서울전차 381호
-STR_NAME_HYUNDAI_WIRELESS_TRAM_3CARS             :현대로템 무가선 저상 트램 (3량·1CC)
-STR_NAME_HYUNDAI_WIRELESS_TRAM_5CARS             :현대로템 무가선 저상 트램 (5량·1CC)
-STR_NAME_HYUNDAI_WIRELESS_TRAM_7CARS             :현대로템 무가선 저상 트램 (7량·1CC)
+STR_NAME_SEOUL_51                                :서울전차 51호 (1CC)
+STR_NAME_SEOUL_150                               :서울전차 150호 (2CC)
+STR_NAME_BUSAN_OLD                               :부산전차 (2CC)
+STR_NAME_SEOUL_363                               :서울전차 363호 (2CC)
+STR_NAME_SEOUL_381                               :서울전차 381호 (2CC)
+STR_NAME_HYUNDAI_WIRELESS_TRAM_3CARS             :현대로템 무가선 저상 트램 (1CC)
+STR_NAME_HYUNDAI_WIRELESS_TRAM_5CARS             :현대로템 무가선 저상 트램 (1CC)
+STR_NAME_HYUNDAI_WIRELESS_TRAM_7CARS             :현대로템 무가선 저상 트램 (1CC)
+STR_NAME_WIRYE                                   :서울 경전철 위례선 트램 (2CC)
 
 # vehicle descriptions
 STR_DESC_SEOUL_Y1899                             :한반도 최초의 노면전차 차량.
