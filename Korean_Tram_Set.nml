@@ -3,10 +3,11 @@
         grfid                              :"KGT1"; 
         name                               :string(STR_GRF_NAME);
         desc                               :string(STR_GRF_DESC);
-        version                            :211225;
-        min_compatible_version             :0;
-        }
+        version                            :230303;
         
+        min_compatible_version             :230303;        
+        } 
+
 // tables 
     cargotable {
         PASS
@@ -31,6 +32,7 @@
         Hyundai_wireless_tram_3cars,
         Hyundai_wireless_tram_5cars,
         Hyundai_wireless_tram_7cars,
+        wirye,
         ]);    
 
 // TRACK_ELEC
@@ -148,7 +150,7 @@
 
     }
 
-// TRACK_WIRELESS
+// Track Wireless
     // GUI (same with TRACK_ELEC)
         spriteset(set_TRACK_WIRELESS_gui, "./Korean_Tram_Set/gfx/TRACK_ELEC.png") {
             [   0,    0,   20,   13,    0,    0]  // first line
@@ -262,7 +264,7 @@
 
     }
 
-// TRACK_CONCRETE
+// Track Concrete
     // GUI
         spriteset(set_TRACK_CONCRETE_gui, "./Korean_Tram_Set/gfx/TRACK_CONCRETE.png") {
             [   0,    0,   20,   13,    0,    0]  // first line
@@ -376,7 +378,7 @@
 
     }
 
-// TRACK_GRASS
+// Track Grass
     // GUI
         spriteset(set_TRACK_GRASS_gui, "./Korean_Tram_Set/gfx/TRACK_GRASS.png") {
             [   0,    0,   20,   13,    0,    0]  // first line
@@ -493,7 +495,7 @@
 
     //purchase
         template tmpl_tram_purchase (x, y) {  
-            [ x,      y,      60,      15,     -24,      -8]
+            [ x,      y,      60,      15,     -30,      -8]
         } 
 
     //tram_seoul_1899
@@ -555,39 +557,39 @@
             [ x+230,  y,      20,      17,      -8,     -10]
         } 
     
-    //hyundai_wireless_tram
-        template tmpl_hyundai_wireless_tram_50 (x, y) {
-            [ x,      y,       8,      17,      -2,     -10] //↑
-            [ x+20,   y,      16,      15,      -8,      -7] //↗
-            [ x+55,   y,      20,      12,      -7,      -7] //→
-            [ x+100,  y,      16,      15,      -2,      -5] //↘
-            [ x+130,  y,       8,      17,      -4,      -7] //↓
-            [ x+150,  y,      16,      15,     -14,      -6] //↙
-            [ x+185,  y,      20,      12,     -13,      -7] //←
-            [ x+230,  y,      16,      15,      -8,     -10] //↖
+    //wireless_trams
+        template tmpl_wireless_tram_length_3 (x, y) {
+            [ x,      y,       8,      13,      -2,     -10] //↑
+            [ x+20,   y,      11,      12,      -2,      -7] //↗
+            [ x+50,   y,      12,      12,      -6,      -8] //→
+            [ x+90,   y,      11,      12,       3,      -2] //↘
+            [ x+120,  y,       8,      13,      -4,      -7] //↓
+            [ x+140,  y,      11,      12,     -14,      -3] //↙
+            [ x+170,  y,      12,      12,     -12,      -8] //←
+            [ x+210,  y,      11,      12,      -7,      -9] //↖
         }   
 
-        template tmpl_hyundai_wireless_tram_60 (x, y) {
-            [ x,      y,       8,      17,      -2,     -10] 
-            [ x+20,   y,      16,      15,      -8,      -7]
-            [ x+55,   y,      20,      12,      -7,      -7]
-            [ x+100,  y,      16,      15,      -2,      -5]
-            [ x+130,  y,       8,      17,      -4,      -7]
-            [ x+150,  y,      16,      15,     -14,      -6]
-            [ x+185,  y,      20,      12,     -13,      -7]
-            [ x+230,  y,      16,      15,      -8,     -10]
-        } 
+        template tmpl_wireless_tram_length_5 (x, y) {
+            [ x,      y,       8,      17,      -2,     -10] //↑
+            [ x+20,   y,      15,      14,      -6,      -7] //↗
+            [ x+50,   y,      20,      12,      -6,      -8] //→
+            [ x+90,   y,      15,      14,      -1,      -4] //↘
+            [ x+120,  y,       8,      17,      -4,      -7] //↓
+            [ x+140,  y,      15,      14,     -14,      -5] //↙
+            [ x+170,  y,      20,      12,     -12,      -8] //←
+            [ x+210,  y,      15,      14,      -7,      -9] //↖
+        }   
 
-        template tmpl_hyundai_wireless_tram_10 (x, y) {
-            [ x,      y,       8,      15,      -2,     -10] 
-            [ x+20,   y,      14,      14,      -6,      -7]
-            [ x+55,   y,      16,      12,      -3,      -7]
-            [ x+100,  y,      14,      14,       0,      -4]
-            [ x+130,  y,       8,      15,      -4,      -5]
-            [ x+150,  y,      14,      14,     -14,      -5]
-            [ x+185,  y,      16,      12,     -13,      -7]
-            [ x+230,  y,      14,      14,      -8,     -10]
-        }  
+        template tmpl_wireless_tram_length_6 (x, y) {
+            [ x,      y,       8,      19,      -2,     -10] //↑
+            [ x+20,   y,      17,      15,      -8,      -7] //↗
+            [ x+50,   y,      24,      12,      -6,      -8] //→
+            [ x+90,   y,      17,      15,      -3,      -5] //↘
+            [ x+120,  y,       8,      19,      -4,      -7] //↓
+            [ x+140,  y,      17,      15,     -14,      -6] //↙
+            [ x+170,  y,      24,      12,     -12,      -8] //←
+            [ x+210,  y,      17,      15,      -7,      -9] //↖
+        }   
 
 //Graphics Definition 
     //seoul_y1899
@@ -671,19 +673,19 @@
 
     //hyundai_wireless_tram 
         spriteset (spriteset_hyundai_wireless_tram, "./Korean_Tram_Set/gfx/tram_main.png") {
-            tmpl_hyundai_wireless_tram_50 (70, 0)
+            tmpl_wireless_tram_length_6 (70, 0)
         }
 
         spriteset (spriteset_hyundai_wireless_tram_1, "./Korean_Tram_Set/gfx/tram_main.png") {
-            tmpl_hyundai_wireless_tram_60 (70, 30)
+            tmpl_wireless_tram_length_5 (70, 30)
         }
 
         spriteset (spriteset_hyundai_wireless_tram_2, "./Korean_Tram_Set/gfx/tram_main.png") {
-            tmpl_hyundai_wireless_tram_10 (70, 60)
+            tmpl_wireless_tram_length_3 (70, 60)
         }
 
         spriteset (spriteset_hyundai_wireless_tram_3, "./Korean_Tram_Set/gfx/tram_main.png") {
-            tmpl_hyundai_wireless_tram_60 (70, 90)
+            tmpl_wireless_tram_length_6 (70, 90)
         }
 
         spriteset (hyundai_wireless_tram_3cars_purchase, "./Korean_Tram_Set/gfx/tram_main.png") {
@@ -697,6 +699,27 @@
         spriteset (hyundai_wireless_tram_7cars_purchase, "./Korean_Tram_Set/gfx/tram_main.png") {
             tmpl_tram_purchase (0, 60)
         }
+
+    //LRT_wirye 
+        spriteset (spriteset_wirye, "./Korean_Tram_Set/gfx/tram_main.png") {
+            tmpl_wireless_tram_length_6 (70, 120)
+        }
+
+        spriteset (spriteset_wirye_1, "./Korean_Tram_Set/gfx/tram_main.png") {
+            tmpl_wireless_tram_length_5 (70, 150)
+        }
+
+        spriteset (spriteset_wirye_2, "./Korean_Tram_Set/gfx/tram_main.png") {
+            tmpl_wireless_tram_length_3 (70, 180)
+        }
+
+        spriteset (spriteset_wirye_3, "./Korean_Tram_Set/gfx/tram_main.png") {
+            tmpl_wireless_tram_length_6 (70, 210)
+        }
+
+        spriteset (wirye_purchase, "./Korean_Tram_Set/gfx/tram_main.png") {
+            tmpl_tram_purchase (0, 120)
+        }    
 
 // Vehicle Callbacks
     //hyundai_wireless_tram_3cars
@@ -722,7 +745,7 @@
         //set length of each part
             switch (FEAT_ROADVEHS, SELF, switch_length_hyundai_wireless_tram_3cars, position_in_consist) {
                 1  :return 5;
-                    return 5;
+                    return 6;
             }
 
     //hyundai_wireless_tram_5cars
@@ -752,9 +775,9 @@
         //set length of each part
             switch (FEAT_ROADVEHS, SELF, switch_length_hyundai_wireless_tram_5cars, position_in_consist) {
                 1  :return 5;
-                2  :return 4;
+                2  :return 3;
                 3  :return 5;
-                    return 5;
+                    return 6;
             }
 
     //hyundai_wireless_tram_7cars
@@ -788,12 +811,45 @@
         //set length of each part
             switch (FEAT_ROADVEHS, SELF, switch_length_hyundai_wireless_tram_7cars, position_in_consist) {
                 1  :return 5;
-                2  :return 4;
+                2  :return 3;
                 3  :return 5;
-                4  :return 4;
+                4  :return 3;
                 5  :return 5;
-                    return 5;
+                    return 6;
             }
+
+    //LRT wirye line
+        //set number of articulated parts
+            switch (FEAT_ROADVEHS, SELF, switch_articulated_wirye, extra_callback_info1) {
+                1..4: return wirye; //use same vehicle for all parts
+                return CB_RESULT_NO_MORE_ARTICULATED_PARTS; //stop adding vehicle parts
+            } 
+
+        //set spriteset
+            switch (FEAT_ROADVEHS, SELF, switch_spriteset_wirye, position_in_consist ) {
+                1  :spriteset_wirye_1;
+                2  :spriteset_wirye_2;
+                3  :spriteset_wirye_1;
+                4  :spriteset_wirye_3;
+                    spriteset_wirye; //default
+            }
+
+        //set capacity of each part
+            switch (FEAT_ROADVEHS, SELF, switch_capacity_wirye, position_in_consist ) {
+                1  :return 60;
+                2  :return 10;
+                3  :return 60;
+                    return 50; //default
+            }
+
+        //set length of each part
+            switch (FEAT_ROADVEHS, SELF, switch_length_wirye, position_in_consist) {
+                1  :return 5;
+                2  :return 3;
+                3  :return 5;
+                    return 6;
+            }
+
 
 // Graphics Sprite Group
     //seoul_y1899
@@ -837,7 +893,7 @@
 
             // Spec
             power                          :96 hp; //uncertain
-            speed                          :19 km/h; //uncertain  
+            speed                          :20 km/h; //uncertain  
             weight                         :12 ton; //uncertain
             length                         :6;
 
@@ -882,7 +938,7 @@
 
             // Spec
             power                          :96 hp; //uncertain
-            speed                          :19 km/h; //uncertain  
+            speed                          :20 km/h; //uncertain  
             weight                         :12 ton; //uncertain
             length                         :7;
 
@@ -1291,3 +1347,51 @@
         }
     }
 
+    // Item Seoul LRT wirye line
+    item(FEAT_ROADVEHS, wirye) {
+
+        property {
+            // common properties 
+            name                           :string(STR_NAME_WIRYE);
+            climates_available             :ALL_CLIMATES;
+            introduction_date              :date(2025,09,01);
+            sprite_id                      :SPRITE_ID_NEW_ROADVEH; //use custom sprites
+
+            // Spec
+            power                          :360 hp; //uncertain
+            speed                          :72 km/h; //70, 50
+            weight                         :37.5 ton;
+
+            // model
+            model_life                     :VEHICLE_NEVER_EXPIRES;
+            vehicle_life                   :30;
+            retire_early                   :0;
+            reliability_decay              :0;
+
+            // cargo 
+            cargo_capacity                 :(50*2+60*2+10)/5; 
+            refittable_cargo_classes       :NO_CARGO_CLASS;
+            non_refittable_cargo_classes   :NO_CARGO_CLASS;
+            cargo_allow_refit              :[PASS];
+            cargo_disallow_refit           :[];
+            loading_speed                  :50;
+
+            // Costs   
+            cost_factor                    :200;
+            running_cost_base              :RUNNING_COST_ROADVEH;
+            running_cost_factor            :200;
+            refit_cost                     :0;
+
+            // Flags
+            misc_flags                     :bitmask(ROADVEH_FLAG_TRAM, ROADVEH_FLAG_2CC); //make this a tram
+        }
+
+        graphics {
+            default                        :switch_spriteset_wirye;
+            purchase                       :wirye_purchase;
+            articulated_part               :switch_articulated_wirye;
+            cargo_capacity                 :switch_capacity_wirye;
+            purchase_cargo_capacity        :wirye_purchase; //linked to the purchase menu spriteset
+            length                         :switch_length_wirye;
+        }
+    }
