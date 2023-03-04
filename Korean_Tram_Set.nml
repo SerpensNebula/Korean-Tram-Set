@@ -1241,6 +1241,7 @@
 
             // Flags
             misc_flags                     :bitmask(ROADVEH_FLAG_TRAM); //make this a tram
+            sound_effect                   :SOUND_TRAIN_HORN;
         }
 
         graphics {
@@ -1291,6 +1292,7 @@
 
             // Flags
             misc_flags                     :bitmask(ROADVEH_FLAG_TRAM); //make this a tram
+            sound_effect                   :SOUND_TRAIN_HORN;
         }
 
         graphics {
@@ -1341,6 +1343,7 @@
 
             // Flags
             misc_flags                     :bitmask(ROADVEH_FLAG_TRAM); //make this a tram
+            sound_effect                   :SOUND_TRAIN_HORN;
         }
 
         graphics {
@@ -1391,6 +1394,7 @@
 
             // Flags
             misc_flags                     :bitmask(ROADVEH_FLAG_TRAM, ROADVEH_FLAG_2CC); //make this a tram
+            sound_effect                   :SOUND_TRAIN_HORN;
         }
 
         graphics {
