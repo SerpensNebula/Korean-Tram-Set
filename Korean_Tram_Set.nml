@@ -3,9 +3,9 @@
         grfid                              :"KGT1"; 
         name                               :string(STR_GRF_NAME);
         desc                               :string(STR_GRF_DESC);
-        version                            :230303;
-        
-        min_compatible_version             :230303;        
+        url                                :string(STR_GRF_URL);
+        version                            :230304;
+        min_compatible_version             :230304;        
         } 
 
 // tables 
@@ -917,6 +917,7 @@
 
             // Flags
             misc_flags                     :bitmask(ROADVEH_FLAG_TRAM); //make this a tram
+            sound_effect                   :sound("./Korean_Tram_Set/sound/TRAM_BELL_OLD.wav");
         }
 
         graphics {
@@ -962,6 +963,7 @@
 
             // Flags
             misc_flags                     :bitmask(ROADVEH_FLAG_TRAM); //make this a tram
+            sound_effect                   :sound("./Korean_Tram_Set/sound/TRAM_BELL_OLD.wav");
         }
 
         graphics {
@@ -1006,6 +1008,7 @@
 
             // Flags
             misc_flags                     :bitmask(ROADVEH_FLAG_TRAM); //make this a tram
+            sound_effect                   :sound("./Korean_Tram_Set/sound/TRAM_BELL_OLD.wav");
         }
 
         graphics {
@@ -1050,6 +1053,7 @@
 
             // Flags
             misc_flags                     :bitmask(ROADVEH_FLAG_TRAM, ROADVEH_FLAG_2CC); //make this a tram
+            sound_effect                   :sound("./Korean_Tram_Set/sound/TRAM_BELL_OLD.wav");
         }
 
         graphics {
@@ -1094,6 +1098,7 @@
 
             // Flags
             misc_flags                     :bitmask(ROADVEH_FLAG_TRAM, ROADVEH_FLAG_2CC); //make this a tram
+            sound_effect                   :sound("./Korean_Tram_Set/sound/TRAM_BELL_OLD.wav");
         }
 
         graphics {
@@ -1141,6 +1146,7 @@
 
             // Flags
             misc_flags                     :bitmask(ROADVEH_FLAG_TRAM, ROADVEH_FLAG_2CC); //make this a tram
+            sound_effect                   :sound("./Korean_Tram_Set/sound/TRAM_BELL_OLD.wav");
         }
 
         graphics {
@@ -1188,6 +1194,7 @@
 
             // Flags
             misc_flags                     :bitmask(ROADVEH_FLAG_TRAM, ROADVEH_FLAG_2CC); //make this a tram
+            sound_effect                   :sound("./Korean_Tram_Set/sound/TRAM_BELL_OLD.wav");
         }
 
         graphics {
