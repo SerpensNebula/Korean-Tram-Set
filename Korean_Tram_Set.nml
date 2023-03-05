@@ -4,9 +4,27 @@
         name                               :string(STR_GRF_NAME);
         desc                               :string(STR_GRF_DESC);
         url                                :string(STR_GRF_URL);
-        version                            :230304;
-        min_compatible_version             :230304;        
-        } 
+        version                            :230305;
+        min_compatible_version             :230301;        
+        
+        // Parameters
+            // speed & power parameters
+                param  1    {
+                    para_speed_power {
+                        type:       int;
+                        name:       string(STR_PARA_NAME_SPEED_POWER);
+                        desc:       string(STR_PARA_DESC_SPEED_POWER);
+                        min_value:  1;
+                        max_value:  2;
+                        def_value:  1;
+                        
+                        names:    {
+                            1:    string(STR_PARA_OPT_1);
+                            2:    string(STR_PARA_OPT_2);
+                        };
+                    }
+                }
+        }
 
 // tables 
     cargotable {
@@ -561,33 +579,33 @@
         template tmpl_wireless_tram_length_3 (x, y) {
             [ x,      y,       8,      13,      -2,     -10] //↑
             [ x+20,   y,      11,      12,      -2,      -7] //↗
-            [ x+50,   y,      12,      12,      -6,      -8] //→
+            [ x+50,   y,      12,      12,       0,      -8] //→
             [ x+90,   y,      11,      12,       3,      -2] //↘
             [ x+120,  y,       8,      13,      -4,      -7] //↓
             [ x+140,  y,      11,      12,     -14,      -3] //↙
-            [ x+170,  y,      12,      12,     -12,      -8] //←
+            [ x+170,  y,      12,      12,     -10,      -8] //←
             [ x+210,  y,      11,      12,      -7,      -9] //↖
         }   
 
         template tmpl_wireless_tram_length_5 (x, y) {
             [ x,      y,       8,      17,      -2,     -10] //↑
             [ x+20,   y,      15,      14,      -6,      -7] //↗
-            [ x+50,   y,      20,      12,      -6,      -8] //→
+            [ x+50,   y,      20,      12,      -8,      -8] //→
             [ x+90,   y,      15,      14,      -1,      -4] //↘
             [ x+120,  y,       8,      17,      -4,      -7] //↓
             [ x+140,  y,      15,      14,     -14,      -5] //↙
-            [ x+170,  y,      20,      12,     -12,      -8] //←
+            [ x+170,  y,      20,      12,     -10,      -8] //←
             [ x+210,  y,      15,      14,      -7,      -9] //↖
         }   
 
         template tmpl_wireless_tram_length_6 (x, y) {
             [ x,      y,       8,      19,      -2,     -10] //↑
             [ x+20,   y,      17,      15,      -8,      -7] //↗
-            [ x+50,   y,      24,      12,      -6,      -8] //→
+            [ x+50,   y,      24,      12,     -12,      -8] //→
             [ x+90,   y,      17,      15,      -3,      -5] //↘
             [ x+120,  y,       8,      19,      -4,      -7] //↓
             [ x+140,  y,      17,      15,     -14,      -6] //↙
-            [ x+170,  y,      24,      12,     -12,      -8] //←
+            [ x+170,  y,      24,      12,     -10,      -8] //←
             [ x+210,  y,      17,      15,      -7,      -9] //↖
         }   
 
@@ -892,8 +910,8 @@
             sprite_id                      :SPRITE_ID_NEW_ROADVEH; //use custom sprites
 
             // Spec
-            power                          :96 hp; //uncertain
-            speed                          :20 km/h; //uncertain  
+            power                          :96*(para_speed_power) hp; //uncertain
+            speed                          :20*(para_speed_power) km/h; //uncertain  
             weight                         :12 ton; //uncertain
             length                         :6;
 
@@ -938,8 +956,8 @@
             sprite_id                      :SPRITE_ID_NEW_ROADVEH; //use custom sprites
 
             // Spec
-            power                          :96 hp; //uncertain
-            speed                          :20 km/h; //uncertain  
+            power                          :96*(para_speed_power) hp; //uncertain
+            speed                          :20*(para_speed_power) km/h; //uncertain  
             weight                         :12 ton; //uncertain
             length                         :7;
 
@@ -983,8 +1001,8 @@
             sprite_id                      :SPRITE_ID_NEW_ROADVEH; //use custom sprites
 
             // Spec
-            power                          :120 hp; //uncertain
-            speed                          :40 km/h; //uncertain  
+            power                          :120*(para_speed_power) hp; //uncertain
+            speed                          :40*(para_speed_power) km/h; //uncertain  
             weight                         :14 ton; //uncertain
             length                         :6;
 
@@ -1028,8 +1046,8 @@
             sprite_id                      :SPRITE_ID_NEW_ROADVEH; //use custom sprites
 
             // Spec
-            power                          :136 hp; //uncertain
-            speed                          :48 km/h; //uncertain  
+            power                          :136*(para_speed_power) hp; //uncertain
+            speed                          :48*(para_speed_power) km/h; //uncertain  
             weight                         :16 ton; //uncertain
             length                         :7;
 
@@ -1073,8 +1091,8 @@
             sprite_id                      :SPRITE_ID_NEW_ROADVEH; //use custom sprites
 
             // Spec
-            power                          :144 hp; //uncertain
-            speed                          :56 km/h; //uncertain  
+            power                          :144*(para_speed_power) hp; //uncertain
+            speed                          :56*(para_speed_power) km/h; //uncertain  
             weight                         :18 ton;
             length                         :8;
 
@@ -1119,8 +1137,8 @@
             sprite_id                      :SPRITE_ID_NEW_ROADVEH; //use custom sprites
 
             // Spec
-            power                          :144 hp; //uncertain
-            speed                          :56 km/h; //uncertain  
+            power                          :144*(para_speed_power) hp; //uncertain
+            speed                          :56*(para_speed_power) km/h; //uncertain  
             weight                         :18 ton;
             length                         :8;
 
@@ -1167,8 +1185,8 @@
             sprite_id                      :SPRITE_ID_NEW_ROADVEH; //use custom sprites
 
             // Spec
-            power                          :144 hp; //uncertain
-            speed                          :56 km/h; //uncertain  
+            power                          :144*(para_speed_power) hp; //uncertain
+            speed                          :56*(para_speed_power) km/h; //uncertain  
             weight                         :18 ton;
             length                         :8;
 
@@ -1215,8 +1233,8 @@
             sprite_id                      :SPRITE_ID_NEW_ROADVEH; //use custom sprites
 
             // Spec
-            power                          :240 hp; //uncertain
-            speed                          :72 km/h; //70, 50
+            power                          :240*(para_speed_power) hp; //uncertain
+            speed                          :72*(para_speed_power) km/h; //70, 50
             weight                         :22.5 ton;
 
             // model
@@ -1241,7 +1259,7 @@
 
             // Flags
             misc_flags                     :bitmask(ROADVEH_FLAG_TRAM); //make this a tram
-            sound_effect                   :SOUND_TRAIN_HORN;
+            sound_effect                   :SOUND_DEPARTURE_TRAIN;
         }
 
         graphics {
@@ -1266,8 +1284,8 @@
             sprite_id                      :SPRITE_ID_NEW_ROADVEH; //use custom sprites
 
             // Spec
-            power                          :360 hp; //uncertain
-            speed                          :72 km/h; //70, 50
+            power                          :360*(para_speed_power) hp; //uncertain
+            speed                          :72*(para_speed_power) km/h; //70, 50
             weight                         :37.5 ton;
 
             // model
@@ -1292,7 +1310,7 @@
 
             // Flags
             misc_flags                     :bitmask(ROADVEH_FLAG_TRAM); //make this a tram
-            sound_effect                   :SOUND_TRAIN_HORN;
+            sound_effect                   :SOUND_DEPARTURE_TRAIN;
         }
 
         graphics {
@@ -1317,8 +1335,8 @@
             sprite_id                      :SPRITE_ID_NEW_ROADVEH; //use custom sprites
 
             // Spec
-            power                          :480 hp; //uncertain
-            speed                          :72 km/h; //70, 50
+            power                          :480*(para_speed_power) hp; //uncertain
+            speed                          :72*(para_speed_power) km/h; //70, 50
             weight                         :52.5 ton;
 
             // model
@@ -1343,7 +1361,7 @@
 
             // Flags
             misc_flags                     :bitmask(ROADVEH_FLAG_TRAM); //make this a tram
-            sound_effect                   :SOUND_TRAIN_HORN;
+            sound_effect                   :SOUND_DEPARTURE_TRAIN;
         }
 
         graphics {
@@ -1368,8 +1386,8 @@
             sprite_id                      :SPRITE_ID_NEW_ROADVEH; //use custom sprites
 
             // Spec
-            power                          :360 hp; //uncertain
-            speed                          :72 km/h; //70, 50
+            power                          :360*(para_speed_power) hp; //uncertain
+            speed                          :72*(para_speed_power) km/h; //70, 50
             weight                         :37.5 ton;
 
             // model
@@ -1393,8 +1411,8 @@
             refit_cost                     :0;
 
             // Flags
-            misc_flags                     :bitmask(ROADVEH_FLAG_TRAM, ROADVEH_FLAG_2CC); //make this a tram
-            sound_effect                   :SOUND_TRAIN_HORN;
+            misc_flags                     :bitmask(ROADVEH_FLAG_TRAM); //make this a tram
+            sound_effect                   :SOUND_DEPARTURE_TRAIN;
         }
 
         graphics {
