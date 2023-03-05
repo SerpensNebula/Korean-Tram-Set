@@ -3,6 +3,13 @@
 # GRF name and description
 STR_GRF_NAME                                     :Korean Tram Set 0.4.0
 STR_GRF_DESC                                     :Korean Tram Set adds trams that operated from the Korean Empire to before liberation from Japan and newly manufactured trams in South Korea since the 2000s.
+STR_GRF_URL                                      :https://github.com/SerpensNebula/Korean-Tram-Set
+
+# parameters
+STR_PARA_NAME_SPEED_POWER                        :Max speed & power multiplier 
+STR_PARA_DESC_SPEED_POWER                        :Set max speed and power of all trams.
+STR_PARA_OPT_1                                   :x1 (default)
+STR_PARA_OPT_2                                   :x2
 
 # tracks
 STR_TRACK_ELEC_NAME                              :Electric Tramway 
@@ -44,7 +51,7 @@ STR_NAME_SEOUL_381                               :Seoul Tram No. 381 (2CC)
 STR_NAME_HYUNDAI_WIRELESS_TRAM_3CARS             :Hyundai Wireless Low-Floor Tram (1CC)
 STR_NAME_HYUNDAI_WIRELESS_TRAM_5CARS             :Hyundai Wireless Low-Floor Tram (1CC)
 STR_NAME_HYUNDAI_WIRELESS_TRAM_7CARS             :Hyundai Wireless Low-Floor Tram (1CC)
-STR_NAME_WIRYE                                   :Seoul LRT Wirye Tram (2CC)
+STR_NAME_WIRYE                                   :Seoul LRT Wirye Tram (1CC)
 
 # vehicle descriptions
 STR_DESC_SEOUL_Y1899                             :The first tram vehicle of Korean Peninsula.
