@@ -4,6 +4,13 @@
 STR_GRF_NAME                                     :한국 노면전차 세트 0.4.0
 STR_GRF_DESC                                     :대한 제국기부터 해방 이전까지 운행했던 노면전차와, 2000년대 이후 한국에서 새로 제작된 노면전차를 추가해주는 NewGRF입니다.
 
+STR_GRF_URL                                      :https://github.com/SerpensNebula/Korean-Tram-Set
+
+# parameters
+STR_PARA_NAME_SPEED_POWER                        :최고속도와 출력 매개변수
+STR_PARA_DESC_SPEED_POWER                        :모든 노면전차의 최고속도와 출력을 설정합니다.
+STR_PARA_OPT_1                                   :x1 (기본값)
+STR_PARA_OPT_2                                   :x2
 
 # tracks
 STR_TRACK_ELEC_NAME                              :전찻길
@@ -45,7 +52,7 @@ STR_NAME_SEOUL_381                               :서울전차 381호 (2CC)
 STR_NAME_HYUNDAI_WIRELESS_TRAM_3CARS             :현대로템 무가선 저상 트램 (1CC)
 STR_NAME_HYUNDAI_WIRELESS_TRAM_5CARS             :현대로템 무가선 저상 트램 (1CC)
 STR_NAME_HYUNDAI_WIRELESS_TRAM_7CARS             :현대로템 무가선 저상 트램 (1CC)
-STR_NAME_WIRYE                                   :서울 경전철 위례선 트램 (2CC)
+STR_NAME_WIRYE                                   :서울 경전철 위례선 트램 (1CC)
 
 # vehicle descriptions
 STR_DESC_SEOUL_Y1899                             :한반도 최초의 노면전차 차량.
