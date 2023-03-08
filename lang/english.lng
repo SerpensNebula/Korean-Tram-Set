@@ -12,7 +12,7 @@ STR_PARA_OPT_1                                   :x1 (default)
 STR_PARA_OPT_2                                   :x2
 
 # tracks
-STR_TRACK_ELEC_NAME                              :Electric Tramway 
+STR_TRACK_ELEC_NAME                              :Electric Tramway
 STR_TRACK_ELEC_DROPDOWN_MENU                     :Electric Tramway Construction
 STR_TRACK_ELEC_TOOLBAR_CAPTION                   :Electric Tramway Construction
 STR_TRACK_ELEC_BUILD_VEHICLE_CAPTION             :Build New Tram Vehicles
@@ -33,9 +33,9 @@ STR_TRACK_CONCRETE_BUILD_VEHICLE_CAPTION         :Build New Wireless Tram Vehicl
 STR_TRACK_CONCRETE_NEW_ENGINE                    :Wireless Tram Vehicle
 STR_TRACK_CONCRETE_AUTOREPLACE                   :Wireless Tram Vehicles
 
-STR_TRACK_GRASS_NAME                             :Wireless Tramway On Grass
-STR_TRACK_GRASS_DROPDOWN_MENU                    :Wireless Tramway On Grass Construction
-STR_TRACK_GRASS_TOOLBAR_CAPTION                  :Wireless Tramway On Grass Construction
+STR_TRACK_GRASS_NAME                             :Wireless Tramway On Grass Verge
+STR_TRACK_GRASS_DROPDOWN_MENU                    :Wireless Tramway On Grass Verge Construction
+STR_TRACK_GRASS_TOOLBAR_CAPTION                  :Wireless Tramway On Grass Verge Construction
 STR_TRACK_GRASS_BUILD_VEHICLE_CAPTION            :Build New Wireless Tram Vehicles
 STR_TRACK_GRASS_NEW_ENGINE                       :Wireless Tram Vehicle
 STR_TRACK_GRASS_AUTOREPLACE                      :Wireless Tram Vehicles
