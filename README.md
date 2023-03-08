@@ -1,8 +1,8 @@
-# Korean-Tram-Set 0.4.0 - WORK IN PROGRESS
+# Korean-Tram-Set 0.4.0
 한국 노면전차 세트의 GitHub 홈페이지입니다. This is a main page of Korean Tram Set.
 
-![002](https://user-images.githubusercontent.com/75788864/147384164-04e637c5-66dc-48e6-96ce-dfbfa72db562.png)
-![001](https://user-images.githubusercontent.com/75788864/147384162-99ed11d9-7a89-4882-b870-281cbb25da54.png)
+![1](https://user-images.githubusercontent.com/75788864/223640678-7a81600b-4240-4e2e-93a1-0045c25c5091.png)
+![2](https://user-images.githubusercontent.com/75788864/223640691-a8024259-92e4-48de-ac74-7ddc21d1c9b5.png)
 
 다운로드 방법
   1. OpenTTD 메인 화면에서 '온라인 콘텐츠 다운로드' 를 클릭합니다.
