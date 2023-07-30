@@ -4,27 +4,27 @@
         name                               :string(STR_GRF_NAME);
         desc                               :string(STR_GRF_DESC);
         url                                :string(STR_GRF_URL);
-        version                            :230308;
+        version                            :230730;
         min_compatible_version             :230301;        
         
         // Parameters
             // speed & power parameters
                 param  0    {
                     para_speed_power {
-                        type:       int;
-                        name:       string(STR_PARA_NAME_SPEED_POWER);
-                        desc:       string(STR_PARA_DESC_SPEED_POWER);
-                        min_value:  1;
-                        max_value:  2;
-                        def_value:  1;
+                        type:           int;
+                        name:           string(STR_PARA_NAME_SPEED_POWER);
+                        desc:           string(STR_PARA_DESC_SPEED_POWER);
+                        min_value:      1;
+                        max_value:      2;
+                        def_value:      1;
                         
-                        names:    {
-                            1:    string(STR_PARA_OPT_1);
-                            2:    string(STR_PARA_OPT_2);
+                        names: {
+                            1:          string(STR_PARA_OPT_1);
+                            2:          string(STR_PARA_OPT_2);
                         };
                     }
                 }
-        }
+    }
 
 // tables 
     cargotable {
@@ -274,7 +274,7 @@
                 track_overlay:                  set_TRACK_WIRELESS_overlay;
                 underlay:                       sw_TRACK_WIRELESS_underlay;
                 depots:                         set_TRACK_WIRELESS_depot;
-                bridge_surfaces:                 sw_TRACK_WIRELESS_bridge_surface;
+                bridge_surfaces:                sw_TRACK_WIRELESS_bridge_surface;
             }
 
     }
@@ -792,7 +792,6 @@
                     return 6;
             }
 
-
 // Graphics Sprite Group
     //seoul_y1899
         spritegroup spritegroup_seoul_car_y1899 {
@@ -822,50 +821,49 @@
                         ];
         }    
 
-
 // Item seoul_y1899
     item(FEAT_ROADVEHS, seoul_y1899) {
 
         property {
             // common properties 
-            name                           :string(STR_NAME_SEOUL_Y1899);
-            climates_available             :ALL_CLIMATES;
-            introduction_date              :date(1899,05,04);
-            sprite_id                      :SPRITE_ID_NEW_ROADVEH; //use custom sprites
+            name:                           string(STR_NAME_SEOUL_Y1899);
+            climates_available:             ALL_CLIMATES;
+            introduction_date:              date(1899,05,04);
+            sprite_id:                      SPRITE_ID_NEW_ROADVEH; //use custom sprites
 
             // Spec
-            power                          :96*(para_speed_power) hp; //uncertain
-            speed                          :20*(para_speed_power) km/h; //uncertain  
-            weight                         :12 ton; //uncertain
-            length                         :6;
+            power:                          96*(para_speed_power) hp; //uncertain
+            speed:                          20*(para_speed_power) km/h; //uncertain  
+            weight:                         12 ton; //uncertain
+            length:                         6;
 
             // model
-            model_life                     :VEHICLE_NEVER_EXPIRES;
-            vehicle_life                   :30;
-            retire_early                   :0;
-            reliability_decay              :0;
+            model_life:                     VEHICLE_NEVER_EXPIRES;
+            vehicle_life:                   30;
+            retire_early:                   0;
+            reliability_decay:              0;
 
             // cargo 
-            cargo_capacity                 :40;
-            refittable_cargo_classes       :NO_CARGO_CLASS;
-            non_refittable_cargo_classes   :NO_CARGO_CLASS;
-            cargo_allow_refit              :[PASS];
-            loading_speed                  :25;
+            cargo_capacity:                 40;
+            refittable_cargo_classes:       NO_CARGO_CLASS;
+            non_refittable_cargo_classes:   NO_CARGO_CLASS;
+            cargo_allow_refit:              [PASS];
+            loading_speed:                  25;
 
             // Costs   
-            cost_factor                    :25;
-            running_cost_base              :RUNNING_COST_ROADVEH;
-            running_cost_factor            :25;
+            cost_factor:                    25;
+            running_cost_base:              RUNNING_COST_ROADVEH;
+            running_cost_factor:            25;
 
             // Flags
-            misc_flags                     :bitmask(ROADVEH_FLAG_TRAM); //make this a tram
-            sound_effect                   :sound("./Korean_Tram_Set/sound/TRAM_BELL_OLD.wav");
+            misc_flags:                     bitmask(ROADVEH_FLAG_TRAM); //make this a tram
+            sound_effect:                   sound("./Korean_Tram_Set/sound/TRAM_BELL_OLD.wav");
         }
 
         graphics {
-            additional_text                :return string(STR_DESC_SEOUL_Y1899);
-            default                        :spritegroup_seoul_car_y1899;
-            purchase                       :seoul_y1899_car_purchase;
+            additional_text:                return string(STR_DESC_SEOUL_Y1899);
+            default:                        spritegroup_seoul_car_y1899;
+            purchase:                       seoul_y1899_car_purchase;
         }
     }  
 
@@ -1176,9 +1174,9 @@
             loading_speed                  :40;
 
             // Costs   
-            cost_factor                    :140;
+            cost_factor                    :130;
             running_cost_base              :RUNNING_COST_ROADVEH;
-            running_cost_factor            :140;
+            running_cost_factor            :160;
             refit_cost                     :0;
 
             // Flags
@@ -1227,9 +1225,9 @@
             loading_speed                  :50;
 
             // Costs   
-            cost_factor                    :200;
+            cost_factor                    :190;
             running_cost_base              :RUNNING_COST_ROADVEH;
-            running_cost_factor            :200;
+            running_cost_factor            :230;
             refit_cost                     :0;
 
             // Flags
@@ -1250,7 +1248,6 @@
 
 // Item Hyundai_wireless_tram_7cars
     item(FEAT_ROADVEHS, Hyundai_wireless_tram_7cars) {
-
         property {
             // common properties 
             name                           :string(STR_NAME_HYUNDAI_WIRELESS_TRAM_7CARS);
@@ -1279,8 +1276,8 @@
 
             // Costs   
             cost_factor                    :255;
-            running_cost_base              :RUNNING_COST_ROADVEH;
-            running_cost_factor            :255;
+            running_cost_base              :RUNNING_COST_STEAM;
+            running_cost_factor            :86;
             refit_cost                     :0;
 
             // Flags
@@ -1299,9 +1296,8 @@
         }
     }
 
-    // Item Seoul LRT wirye line
+// Item Seoul LRT wirye line
     item(FEAT_ROADVEHS, wirye) {
-
         property {
             // common properties 
             name                           :string(STR_NAME_WIRYE);
@@ -1329,9 +1325,9 @@
             loading_speed                  :50;
 
             // Costs   
-            cost_factor                    :200;
+            cost_factor                    :190;
             running_cost_base              :RUNNING_COST_ROADVEH;
-            running_cost_factor            :200;
+            running_cost_factor            :230;
             refit_cost                     :0;
 
             // Flags

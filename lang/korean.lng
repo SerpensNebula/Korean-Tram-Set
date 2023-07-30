@@ -1,8 +1,8 @@
 ##grflangid 0x3A
 
 # GRF name and description
-STR_GRF_NAME                                     :한국 노면전차 세트 0.4.0
-STR_GRF_DESC                                     :대한 제국기부터 해방 이전까지 운행했던 노면전차와, 2000년대 이후 한국에서 새로 제작된 노면전차를 추가해주는 NewGRF입니다.
+STR_GRF_NAME                                     :한국 노면전차 세트 0.4.1
+STR_GRF_DESC                                     :대한 제국기부터 해방 이전까지 운행했던 노면전차와, 2000년대 이후 한국에서 새로 제작된 노면전차를 추가해주는 NewGRF입니다. {}{}{BLACK}라이센스: {SILVER}GNU GPL v3
 
 STR_GRF_URL                                      :https://github.com/SerpensNebula/Korean-Tram-Set
 

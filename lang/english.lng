@@ -1,8 +1,8 @@
 ##grflangid 0x01
 
 # GRF name and description
-STR_GRF_NAME                                     :Korean Tram Set 0.4.0
-STR_GRF_DESC                                     :Korean Tram Set adds trams that operated from the Korean Empire to before liberation from Japan and newly manufactured trams in South Korea since the 2000s.
+STR_GRF_NAME                                     :Korean Tram Set 0.4.1
+STR_GRF_DESC                                     :Korean Tram Set adds trams that operated from the Korean Empire to before liberation from Japan and newly manufactured trams in South Korea since the 2000s. {}{}{BLACK}License: {SILVER}GNU GPL v3
 STR_GRF_URL                                      :https://github.com/SerpensNebula/Korean-Tram-Set
 
 # parameters
